@@ -18,7 +18,7 @@ int main()
     cout << endl;
 
     double pounds;
-    cout << "Enter your weight in pounds: _\b";
+    cout << "Enter your weight in pounds: __\b\b";
     cin >> pounds;
     const double c_pounds = pounds;
     cout << endl;
