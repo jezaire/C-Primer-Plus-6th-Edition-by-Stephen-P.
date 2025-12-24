@@ -1,33 +1,31 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
-int ft_to_inch(int, int);
+float ft_to_inch(float, float);
 double pounds_to_kg(double);
 
 int main()
 {
-    int feet;
+    float feet;
     cout << "Enter your height in ft: _\b";
     cin  >> feet;
-    const int c_feet = feet;
+    const float c_feet = feet;
     cout << endl;
 
-    int inches;
+    float inches;
     cout << "Enter your height in remainder inch: _\b";
     cin  >> inches;
-    const int c_inches = inches;
+    const float c_inches = inches;
     cout << endl;
 
     double pounds;
     cout << "Enter your weight in pounds: _\b";
     cin >> pounds;
-    const int c_pounds = pounds;
+    const double c_pounds = pounds;
     cout << endl;
     
-    int inch_height = ft_to_inch(c_feet, c_inches);
-    double m_height = inch_height  * 0.0254;
-    double kg_weight = pounds_to_kg(c_pounds);
-    double sqrt_height = sqrt(m_height);
+    const double m_height = ft_to_inch(c_feet, c_inches);
+    const double kg_weight = pounds_to_kg(c_pounds);
+    double sqrt_height = m_height * m_height;
 
     const double bmi = kg_weight / sqrt_height;
     cout << "Your BMI is " << bmi << endl;
@@ -35,11 +33,12 @@ int main()
     return 0;
 }
 
-int ft_to_inch(int ft, int inch)
+float ft_to_inch(float ft, float inch)
 {
-    return (ft * 12) + inch;
+    return ((ft * 12) + inch) * 0.0254;
 }
 
 double pounds_to_kg(double conv_pnds)
 {
+    return conv_pnds / 2.2;
 }
