@@ -2,6 +2,7 @@
 using namespace std;
 float ft_to_inch(float, float);
 double pounds_to_kg(double);
+double sqrt(double);
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
     
     const double m_height = ft_to_inch(c_feet, c_inches);
     const double kg_weight = pounds_to_kg(c_pounds);
-    double sqrt_height = m_height * m_height;
+    const double sqrt_height = sqrt(m_height);
 
     const double bmi = kg_weight / sqrt_height;
     cout << "Your BMI is " << bmi << endl;
@@ -41,4 +42,9 @@ float ft_to_inch(float ft, float inch)
 double pounds_to_kg(double conv_pnds)
 {
     return conv_pnds / 2.2;
+}
+
+double sqrt(double height)
+{
+    return height * height;
 }
